@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <br>
+    <div class="containerTimer"> 
+        
+        <h2><img src="./image/clock.svg" height="40px" width="40px"> Timer Luces:</h2>
+        <br>
+        <label for="timeOn">Hora de Encendido:</label>
+        <input type="time" id="timeOn" value="09:00"> <!-- Valor inicial: 08:00 -->
+        <br>
+        <br>
+        <label for="timeOff">Hora de Apagado  :</label>
+        <input type="time" id="timeOff" value="18:00"> <!-- Valor inicial: 18:00 -->
+        <br>
+        <br>
+        <p>Estado de Temporizador: <span id="led4">OFF</span></p>
+        <!-- Mostrar los valores guardados de tiempo de encendido y apagado -->
+        <p>Tiempo de encendido actual: <span id="timeOnDisplay">00:00</span></p>
+        <p>Tiempo de apagado actual: <span id="timeOffDisplay">00:00</span></p>
+        <h3 id="valorGuardado"> </h3>
+        <button onclick="saveSchedule()" type="button" class="btn btn-primary">Guardar programacion</button></div>
+        <br>
+        <div class="containerTimer" >
+            <a href="index.html">
+                <button type="button" class="btn btn-secondary">Volver</button>
+            </a>
+        </div>
+        
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

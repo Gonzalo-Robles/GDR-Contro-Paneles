@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ControlGDR</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="Voltimetro" href="voltimetro.html ">
+  <link rel="timer" href="timer.html">
+ 
+</head>
+<body>
+  <div class="containerTotal">
+    <h2 style="text-align: center;color:blue;">Modulo 1</h2>
+      <div class="containerBoton">
+        <div class="circle" id="circuloEstadoPanel"></div>
+        Panel: <span id="ledPanel" class="barral">ON</span>
+        <label class="switch">
+          <input type="checkbox" id="switchPanel" onclick="toggleRelay('panel')">
+          <span class="slider"></span>
+        </label>
+      </div>
+     
+
+      <div class="containerBoton">
+        <div class="circle" id="circuloEstadoBateria"></div>
+        Bateria: <span id="ledBateria" class="barral">ON</span>
+        <label class="switch">
+          <input type="checkbox" id="switchBateria" onclick="toggleRelay('bateria')">
+          <span class="slider"></span>
+        </label>
+      </div>
+    
+      <div class="containerBoton">
+        <div class="circle" id="circuloEstadoCarga"></div>
+        Carga: <span id="ledCarga" class="barral">ON</span>
+        <label class="switch">
+          <input type="checkbox" id="switchCarga" onclick="toggleRelay('carga')">
+          <span class="slider"></span>
+        </label>
+      </div>
+    
+      <div class="containerBoton">
+        <div class="circle" id="circuloEstadoAuxiliar"></div>
+        Auxiliar: <span id="ledAuxiliar" class="barral">ON</span>
+        <label class="switch">
+          <input type="checkbox" id="switchAuxiliar" onclick="toggleRelay('auxiliar')">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+    <div class="containerTension">
+      <div class="tension">
+        <p id="valorDeCargaEnBateria" >Voltaje:...</p>
+      </div>
+    </div>
+    
+      <p>
+        
+        <a href="/timer.html" class="no-decoration">
+          <img class="extras" src="./image/clock.svg" height="30px" width="30px">
+        </a>
+        
+        <span>Temporizador <input type="checkbox" id="timerCheckbox"> </span>
+        <br>
+        <span id="timeOnDisplay">09:00</span> <span>ON</span>
+        <span id="timeOffDisplay">18:00</span> <span>OFF</span>
+      </p>
+      <div>
+        <a href="/voltimetro.html" class="no-decoration">
+          <img src="./image/pngwing.com.png" height="30px" width="auto">
+        </a>
+        <span>Voltimetro</span> <input type="checkbox" id="voltajeCheckbox">
+        <br>
+        <span><strong>Voltaje Max: <span id="maxVoltimetoDisplay">25</span>V</span></strong>
+        <br>
+        <span><strong>Voltaje Min: <span id="minVoltimetoDisplay">2</span>V</span></strong>
+        <br>
+        <span><strong>Muestras: <span id="cantidadDeMuestrasMostrado"></span> </span>x seg</strong>
+        <br>
+        <span><strong>Delta: <span id="deltaDescargaInput"></span> </span></strong>
+        <br>
+        <a href="/mail.html" class="no-decoration">
+          <img src="./image/mail.png" height="30px" width="auto">
+        </a>
+
+      </div>
+      <div class="containerDB">
+        <div id="rssiValue" ><strong>Valor</strong></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+<script src="main.js"></script>
+</html>

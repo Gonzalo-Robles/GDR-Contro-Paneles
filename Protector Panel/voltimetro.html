@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rele Voltimetrico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-database.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="index" href="index.html">
+    <link rel="timer" href="timer.html">
+</head>
+<body>
+    <div class="container">
+        <h2> <img src="./image/pngwing.com.png" height="40px" width="auto"> Rele voltimetrico</h2>
+        <p>Seleccione una tension de corte minimo y otra maximo</p>
+        <br>
+        <div class="container">
+            <br>   
+            <label for="cantidadDeMuestrasInput"><strong>Valor de Sampleo  :</strong></label>
+            <input type="number" id="cantidadDeMuestrasInput" min="2" max="50" step="1" style="width: 80px;">
+            <br>
+            <br>
+            <label for="deltaDescargaInput">Delta de descarga:</label>
+            <input type="number" id="deltaDescargaInput" min="2" max="50" step="1" style="width: 80px;">
+            <br>
+            <br>
+            <label for="maxVoltimetoInput">Valor Máximo de voltaje:</label>
+            <input type="number" id="maxVoltimetoInput" min="2" max="50" step="1" style="width: 80px;">
+            <br>
+            <br>
+            <label for="minVoltimetoInput">Valor Mínimo de voltaje:</label>
+            <input type="number" id="minVoltimetoInput" min="2" max="50" step="1" style="width: 80px;">     
+            <br>
+            <br>
+            <button onclick="saveVoltimetroRange()" type="button" class="btn btn-primary">Guardar valores</button>
+
+            <br>
+            <br> 
+            <h1 id="valorDeCargaEnBateria"> Voltaje: </h1>
+    
+        <h3 id="valorGuardado"> </h3>
+        <div class="containerVolver" >
+            <a href="index.html">
+                <button type="button" class="btn btn-secondary">Volver</button>
+            </a>
+        </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</html>
